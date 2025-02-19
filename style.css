@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: aqua;
+}
+.button{
+    padding: 14px 20px;
+    margin: 40px ;
+    /* border: none; */
+    cursor: pointer;
+    width: 10%;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 30%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #FFF;
+}
+.inputtache {
+    border: none;
+    outline: none;
+    width: 90%;
+}
+.inputtache::placeholder {
+    /* color: #000; */
+    font-size: 20px;
+    text-align: center;
+}
+.bloc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.liste li{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 10px;
+}
+
+div.fetch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+/* table{
+    border-collapse: collapse;
+    width: 15%;
+    height: 15%;
+     color: #588c7e;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: left; 
+} */
