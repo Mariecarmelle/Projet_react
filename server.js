@@ -1,8 +1,3 @@
-const c = require('./create_server.js')
-
-c.server.listen(3000, () => {
-    console.log('Serveur démarré sur http://localhost:3000')
-})
 // const express = require('express');
 // const app = express();
 // const port = 5000;
@@ -58,16 +53,16 @@ c.server.listen(3000, () => {
 //     console.log(`🚀 Serveur Express démarré sur http://localhost:${port}`);
 // });
 
-// const express = require('express')
-// const morgan = require('morgan')
+const express = require('express')
+const morgan = require('morgan')
 
-// const app = express()
-// const port = 3000
-// app.use(morgan('dev'))
+const app = express()
+const port = 5000
+app.use(morgan('dev'))
 // app.use(express.static(__dirname + '/public'))
-// app.use(express.json()) //Middleware pour lire les json envoyés dans les requête
-// app.use(express.urlencoded({ extended: true }))
-
+ //Middleware pour lire les json envoyés dans les requête
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 // let monsters = [
 //     {id: 1, name: 'Albert', level: 3, desc: 'I am tired'},
 //     {id: 2, name: 'Marc', level: 4, desc: 'I want to go house'},
@@ -95,6 +90,17 @@ c.server.listen(3000, () => {
 //      res.status(201).json({message: 'Monstre ajouté avec succès', user: newmonstre})
 // })
 
-// app.listen(port, () => {
-//     console.log(`Server starts http://localhost:${port}`)
-// })
+
+
+app.set('view engine', 'ejs')
+
+app.get('/form', (req, res) => {
+    res.render('form')
+})
+
+app.post('/form', (req, res) => {
+    res.send(`Données recues : Nom - ${req.body.nom}`)
+})
+app.listen(port, () => {
+    console.log(`Server starts http://localhost:${port}`)
+})
